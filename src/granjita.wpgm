@@ -1,0 +1,29 @@
+import wollok.game.*
+import objects.*
+import plantas.*
+
+program farmville {
+	
+	
+	//configuracion inicial
+	game.title("FarmVille")
+	game.height(10)
+	game.width(10)
+	game.ground("ground.png")
+	
+	//personajes
+	game.addVisualCharacter(hector)
+	
+	//teclas que quiero que reacciones
+	keyboard.m().onPressDo { hector.plantaMaiz()}
+	keyboard.t().onPressDo { hector.plantaTrigo()}
+	keyboard.o().onPressDo { hector.plantaTomaco()}
+	keyboard.r().onPressDo { hector.regar(hector.posicion().allElements())}
+
+
+	game.start()	
+	
+	
+	
+}
+
